@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }}{% endblock title %}
+
+{% block content %}
+{% set version = page.components.2 %}
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky pt-4">
+                <ul class="nav flex-column">
+                    {% set sections = get_section(path="book/version/" ~ version ~ "/_index.md") %}
+                    {% set book = get_section(path="book/_index.md") %}
+                    <li class="nav-item">
+                        <div class="form-group mx-4">
+                            <label class="" for="select-version">Version</label>
+                            <select class="form-control" id="select-version" onchange="window.location.href = this.value">
+                                {% for bookVersion in book.extra.versions %}
+                                <option {% if version == bookVersion %}selected{% endif %} value="{{config.base_url}}/{{ page.path | replace(from=version, to=bookVersion) }}">
+                                    {{bookVersion}}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </li>
+
+                    {% for page in sections.pages %}
+                    <li class="nav-item">
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-1 mt-4 mb-0">
+                            <a class="nav-link text-dark py-0 {% if current_path == page.path %}active{% endif %}" href="{{page.permalink | safe}}">{{ page.title }}</a>
+                        </h6>
+                    </li>
+                    {% endfor %}
+                    {% for ancestor in sections.subsections %}
+                    {% set chapter = get_section(path=ancestor) %}
+
+                    <li class="nav-item">
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-1 mt-3 mb-1">
+                            <a class="nav-link text-dark py-0 {% if current_path == chapter.path %}active{% endif %}" href="{{chapter.permalink | safe}}">{{ chapter.title }}</a>
+                        </h6>
+                        {% if chapter.pages %}
+                        <ul class="nav flex-column ml-4">
+                            {% for h2 in chapter.pages %}
+                            <li class="nav-item">
+                                <a class="text-dark py-1 nav-link {% if current_path == h2.path %}active{% endif %}" href="{{h2.permalink | safe}}">{{ h2.title }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </nav>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="pt-5 pb-5"></div>
+            {% if version == "master" %}
+            <div class="alert alert-warning" role="alert">
+                <i class="fas fa-exclamation-triangle"></i> <strong>Warning!</strong> The documentation in the <strong>master</strong> branch is under development.
+                For more concrete information about leap, please consider choosing a version of leap instead.
+            </div>
+            {% endif %}
+            <h1 class="title">
+                {{ page.title }}
+            </h1>
+            <ul class="page-toc">
+                {% for h1 in page.toc %}
+                <li><a class="text-dark" href="{{h1.permalink | safe}}"><span class="text-primary">#</span> {{h1.title}}</a></li>
+
+                {% if h1.children %}
+                <ul>
+                    {% for h2 in h1.children %}
+                    <li><a class="text-dark" href="{{h2.permalink | safe}}"><span class="text-primary">#</span> {{h2.title}}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endfor %}
+            </ul>
+            <p>{{ page.content | safe }}</p>
+        </main>
+    </div>
+</div>
+{% endblock content %}
