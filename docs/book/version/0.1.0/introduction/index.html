@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Craft the web quickly - Leap Rust Framework</title>
+    <title>Introduction - Leap Rust Framework</title>
     <link rel="stylesheet" href="https:&#x2F;&#x2F;leap.rs/bootstrap.css">
     <link rel="stylesheet" href="https:&#x2F;&#x2F;leap.rs/vendor/fontawesomefree/solid.css">
     <link rel="stylesheet" href="https:&#x2F;&#x2F;leap.rs/vendor/fontawesomefree/fontawesome.css">
@@ -15,13 +15,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item active" href="https:&#x2F;&#x2F;leap.rs">
+            <li class="nav-item " href="https:&#x2F;&#x2F;leap.rs">
                 <a class="nav-link"  href="https:&#x2F;&#x2F;leap.rs">Overview</a>
             </li>
             <li class="nav-item " href="https:&#x2F;&#x2F;leap.rs">
             <a class="nav-link" href="https:&#x2F;&#x2F;leap.rs/blog/">News</a>
             </li>
-            <li class="nav-item " href="https:&#x2F;&#x2F;leap.rs">
+            <li class="nav-item active" href="https:&#x2F;&#x2F;leap.rs">
                 <a class="nav-link" href="https:&#x2F;&#x2F;leap.rs/book/version/0.1.0">Documentation</a>
             </li>
             <li class="nav-item">
@@ -62,51 +62,73 @@
 
 
 
-<div class="jumbotron mt-5">
-    <div class="container">
-        <h1 class="display-4">Craft the web quickly...</h1>
-        <p class="lead">
-            Leap passed the learning curve and craft web applications quickly with ease.
-        </p>
-<!--        <a class="btn btn-primary btn-lg" href="https:&#x2F;&#x2F;leap.rs/book/version/0.1.0/getting-started" role="button">Getting Started</a>-->
-        <a class="btn btn-primary btn-lg" href="https:&#x2F;&#x2F;leap.rs/book/version/0.1.0/" role="button">Documentation</a>
-    </div>
-</div>
-<div class="container">
-    <h2>Latest</h2>
-    
-    
-    <div class="row mb-4">
-        <div class="col-md-12">
-            <div class="border">
-                <div class="d-none d-lg-block">
-                    <img width="100%" height="auto" src="https:&#x2F;&#x2F;leap.rs/images/long-exposure-photography-white-dome-building-interior-911758.jpg">
-                </div>
-                <div class="p-4">
-                    <h2>Let&#x27;s Get This Project Started</h2>
-                    <small>
-                        <span class="category text-info text-uppercase">leap</span>
-                        <span> / </span>
-                        <span class="subtitle text-primary text-capitalize"><strong data-local-date="2020-03-26"></strong></span>
-                        <span> / </span>
-                        <span>Written by <span class="text-capitalize">Daniel Samson</span></span>
-                    </small>
-                    <p class="lead">
-                        <p><a href="http://www.arewewebyet.org/">Are we web yet</a>? Em .... Well ... almost? The rust community has enough to make it easy to craft
-a microservice but crafting a fully featured web application is quite a different experience.</p>
 
-                    </p>
-                    <a class="stretched-lin" href="https:&#x2F;&#x2F;leap.rs&#x2F;blog&#x2F;starting-project&#x2F;" role="button">Continue reading...</a>
-                </div>
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky pt-4">
+                <ul class="nav flex-column">
+                    
+                    
+                    <li class="nav-item">
+                        <div class="form-group mx-4">
+                            <label class="" for="select-version">Version</label>
+                            <select class="form-control" id="select-version" onchange="window.location.href = this.value">
+                                
+                                <option  value="https:&#x2F;&#x2F;leap.rs/book&#x2F;version&#x2F;master&#x2F;introduction&#x2F;">
+                                    master
+                                </option>
+                                
+                                <option selected value="https:&#x2F;&#x2F;leap.rs/book&#x2F;version&#x2F;0.1.0&#x2F;introduction&#x2F;">
+                                    0.1.0
+                                </option>
+                                
+                            </select>
+                        </div>
+                    </li>
+
+                    
+                    <li class="nav-item">
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-1 mt-4 mb-0">
+                            <a class="nav-link text-dark py-0 active" href="https://leap.rs/book/version/0.1.0/introduction/">Introduction</a>
+                        </h6>
+                    </li>
+                    
+                    
+                    
+
+                    <li class="nav-item">
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-1 mt-3 mb-1">
+                            <a class="nav-link text-dark py-0 " href="https://leap.rs/book/version/0.1.0/prologue/">Prologue</a>
+                        </h6>
+                        
+                        <ul class="nav flex-column ml-4">
+                            
+                            <li class="nav-item">
+                                <a class="text-dark py-1 nav-link " href="https://leap.rs/book/version/0.1.0/prologue/release-notes/">Release Notes</a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                </ul>
             </div>
-        </div>
+        </nav>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="pt-5 pb-5"></div>
+            
+            <h1 class="title">
+                Introduction
+            </h1>
+            <ul class="page-toc">
+                
+            </ul>
+            <p><p>Leap is a boiler plate framework that empowers you to get started and build web applications quickly.</p>
+</p>
+        </main>
     </div>
-
-
 </div>
-<footer class="footer">
-    <div class="container">Leap &copy;</div>
-</footer>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https:&#x2F;&#x2F;leap.rs/js/bootstrap.bundle.min.js"></script>

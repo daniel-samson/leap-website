@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }}{% endblock title %}
+{% block content %}
+<div class="pt-5"></div>
+<div class="pt-5"></div>
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="border">
+                <div class="d-none d-lg-block">
+                    <img width="100%" height="auto" src="{{ config.base_url }}/images/{{ page.extra.image }}">
+                </div>
+                <div class="p-4">
+                    <h2>{{page.title}}</h2>
+                    <small>
+                        <span class="category text-info text-uppercase">{{page.taxonomies.categories[0]}}</span>
+                        <span> / </span>
+                        <span class="subtitle text-primary text-capitalize"><strong data-local-date="{{page.date}}"></strong></span>
+                        <span> / </span>
+                        <span>Written by <span class="text-capitalize">{{page.extra.author}}</span></span>
+                    </small>
+                    <div class="w-auto">
+                        <p class="lead">
+                            {{ page.content | safe }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<footer class="footer">
+    <div class="container">Leap &copy;</div>
+</footer>
+{% endblock content %}

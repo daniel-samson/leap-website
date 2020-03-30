@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}{{ section.title }}{% endblock title %}
+{% block content %}
+<div class="jumbotron mt-5">
+    <div class="container">
+        <h1 class="display-4">Craft the web quickly...</h1>
+        <p class="lead">
+            Leap passed the learning curve and craft web applications quickly with ease.
+        </p>
+<!--        <a class="btn btn-primary btn-lg" href="{{ config.base_url }}/book/version/{{config.extra.version}}/getting-started" role="button">Getting Started</a>-->
+        <a class="btn btn-primary btn-lg" href="{{ config.base_url }}/book/version/{{config.extra.version}}/" role="button">Documentation</a>
+    </div>
+</div>
+<div class="container">
+    <h2>Latest</h2>
+    {% set news = get_section(path="blog/_index.md") %}
+    {% set latest = news.pages[0] %}
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="border">
+                <div class="d-none d-lg-block">
+                    <img width="100%" height="auto" src="{{ config.base_url }}/images/{{ latest.extra.image }}">
+                </div>
+                <div class="p-4">
+                    <h2>{{latest.title}}</h2>
+                    <small>
+                        <span class="category text-info text-uppercase">{{latest.taxonomies.categories[0]}}</span>
+                        <span> / </span>
+                        <span class="subtitle text-primary text-capitalize"><strong data-local-date="{{latest.date}}"></strong></span>
+                        <span> / </span>
+                        <span>Written by <span class="text-capitalize">{{latest.extra.author}}</span></span>
+                    </small>
+                    <p class="lead">
+                        {{ latest.summary | safe }}
+                    </p>
+                    <a class="stretched-lin" href="{{ latest.permalink }}" role="button">Continue reading...</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<footer class="footer">
+    <div class="container">Leap &copy;</div>
+</footer>
+{% endblock content %}

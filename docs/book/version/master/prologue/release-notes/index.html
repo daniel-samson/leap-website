@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Release Notes - Leap Rust Framework</title>
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;leap.rs/bootstrap.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;leap.rs/vendor/fontawesomefree/solid.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;leap.rs/vendor/fontawesomefree/fontawesome.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top flex-md-nowrap shadow">
+    <a class="navbar-brand" href="https:&#x2F;&#x2F;leap.rs">Leap</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item " href="https:&#x2F;&#x2F;leap.rs">
+                <a class="nav-link"  href="https:&#x2F;&#x2F;leap.rs">Overview</a>
+            </li>
+            <li class="nav-item " href="https:&#x2F;&#x2F;leap.rs">
+            <a class="nav-link" href="https:&#x2F;&#x2F;leap.rs/blog/">News</a>
+            </li>
+            <li class="nav-item active" href="https:&#x2F;&#x2F;leap.rs">
+                <a class="nav-link" href="https:&#x2F;&#x2F;leap.rs/book/version/0.1.0">Documentation</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://docs.rs/crate/leap/0.1.0">API</a>
+            </li>
+<!--            <li class="nav-item">-->
+<!--            <a class="nav-link" href="https:&#x2F;&#x2F;leap.rs/book/version/master/prologue/contibution-guide/">Contribute</a>-->
+<!--            </li>-->
+        </ul>
+        <button type="button" class="btn btn-link text-dark" data-toggle="modal" data-target="#searchModal" title="Search - Keyboard Shortcut 'S' or '/'">
+            <i class="fas fa-search"></i> Search
+        </button>
+    </div>
+</nav>
+<!-- Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="Search" aria-hidden="true">
+    <div class="modal-dialog search-modal modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="form-group search">
+                    <input id="search-input" class="form-control" type="search" placeholder="Search" aria-label="Search" autocomplete="off">
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="search-results bg-light">
+                    <div class="search-results__items">
+                        <div class=" search-results__item">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky pt-4">
+                <ul class="nav flex-column">
+                    
+                    
+                    <li class="nav-item">
+                        <div class="form-group mx-4">
+                            <label class="" for="select-version">Version</label>
+                            <select class="form-control" id="select-version" onchange="window.location.href = this.value">
+                                
+                                <option selected value="https:&#x2F;&#x2F;leap.rs/book&#x2F;version&#x2F;master&#x2F;prologue&#x2F;release-notes&#x2F;">
+                                    master
+                                </option>
+                                
+                                <option  value="https:&#x2F;&#x2F;leap.rs/book&#x2F;version&#x2F;0.1.0&#x2F;prologue&#x2F;release-notes&#x2F;">
+                                    0.1.0
+                                </option>
+                                
+                            </select>
+                        </div>
+                    </li>
+
+                    
+                    <li class="nav-item">
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-1 mt-4 mb-0">
+                            <a class="nav-link text-dark py-0 " href="https://leap.rs/book/version/master/introduction/">Introduction</a>
+                        </h6>
+                    </li>
+                    
+                    
+                    
+
+                    <li class="nav-item">
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-1 mt-3 mb-1">
+                            <a class="nav-link text-dark py-0 " href="https://leap.rs/book/version/master/prologue/">Prologue</a>
+                        </h6>
+                        
+                        <ul class="nav flex-column ml-4">
+                            
+                            <li class="nav-item">
+                                <a class="text-dark py-1 nav-link active" href="https://leap.rs/book/version/master/prologue/release-notes/">Release Notes</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="text-dark py-1 nav-link " href="https://leap.rs/book/version/master/prologue/upgrade-guide/">Upgrade Guide</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="text-dark py-1 nav-link " href="https://leap.rs/book/version/master/prologue/contibution-guide/">Contribution Guide</a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    
+
+                    <li class="nav-item">
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-1 mt-3 mb-1">
+                            <a class="nav-link text-dark py-0 " href="https://leap.rs/book/version/master/getting-started/">Getting Started</a>
+                        </h6>
+                        
+                        <ul class="nav flex-column ml-4">
+                            
+                            <li class="nav-item">
+                                <a class="text-dark py-1 nav-link " href="https://leap.rs/book/version/master/getting-started/installation/">Installation</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="text-dark py-1 nav-link " href="https://leap.rs/book/version/master/getting-started/configuration/">Configuration</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="text-dark py-1 nav-link " href="https://leap.rs/book/version/master/getting-started/directory-structure/">Directory Structure</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="text-dark py-1 nav-link " href="https://leap.rs/book/version/master/getting-started/deployment/">Deployment</a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    
+
+                    <li class="nav-item">
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-1 mt-3 mb-1">
+                            <a class="nav-link text-dark py-0 " href="https://leap.rs/book/version/master/architecture/">Architecture</a>
+                        </h6>
+                        
+                        <ul class="nav flex-column ml-4">
+                            
+                            <li class="nav-item">
+                                <a class="text-dark py-1 nav-link " href="https://leap.rs/book/version/master/architecture/request-cycle/">Request Cycle</a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    
+
+                    <li class="nav-item">
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-1 mt-3 mb-1">
+                            <a class="nav-link text-dark py-0 " href="https://leap.rs/book/version/master/modules/">Modules</a>
+                        </h6>
+                        
+                        <ul class="nav flex-column ml-4">
+                            
+                            <li class="nav-item">
+                                <a class="text-dark py-1 nav-link " href="https://leap.rs/book/version/master/modules/web-server/">Web Server</a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    
+
+                    <li class="nav-item">
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-1 mt-3 mb-1">
+                            <a class="nav-link text-dark py-0 " href="https://leap.rs/book/version/master/security/">Security</a>
+                        </h6>
+                        
+                        <ul class="nav flex-column ml-4">
+                            
+                            <li class="nav-item">
+                                <a class="text-dark py-1 nav-link " href="https://leap.rs/book/version/master/security/authentication/">Authentication</a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    
+
+                    <li class="nav-item">
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-1 mt-3 mb-1">
+                            <a class="nav-link text-dark py-0 " href="https://leap.rs/book/version/master/performance/">Performance</a>
+                        </h6>
+                        
+                        <ul class="nav flex-column ml-4">
+                            
+                            <li class="nav-item">
+                                <a class="text-dark py-1 nav-link " href="https://leap.rs/book/version/master/performance/benchmarks/">Benchmarks</a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="pt-5 pb-5"></div>
+            
+            <div class="alert alert-warning" role="alert">
+                <i class="fas fa-exclamation-triangle"></i> <strong>Warning!</strong> The documentation in the <strong>master</strong> branch is under development.
+                For more concrete information about leap, please consider choosing a version of leap instead.
+            </div>
+            
+            <h1 class="title">
+                Release Notes
+            </h1>
+            <ul class="page-toc">
+                
+                <li><a class="text-dark" href="https://leap.rs/book/version/master/prologue/release-notes/#what-s-new"><span class="text-primary">#</span> What&#x27;s New</a></li>
+
+                
+                <ul>
+                    
+                    <li><a class="text-dark" href="https://leap.rs/book/version/master/prologue/release-notes/#command"><span class="text-primary">#</span> Command</a></li>
+                    
+                    <li><a class="text-dark" href="https://leap.rs/book/version/master/prologue/release-notes/#web-server"><span class="text-primary">#</span> Web Server</a></li>
+                    
+                    <li><a class="text-dark" href="https://leap.rs/book/version/master/prologue/release-notes/#data"><span class="text-primary">#</span> Data</a></li>
+                    
+                    <li><a class="text-dark" href="https://leap.rs/book/version/master/prologue/release-notes/#templating"><span class="text-primary">#</span> Templating</a></li>
+                    
+                </ul>
+                
+                
+                <li><a class="text-dark" href="https://leap.rs/book/version/master/prologue/release-notes/#changed"><span class="text-primary">#</span> Changed</a></li>
+
+                
+                
+                <li><a class="text-dark" href="https://leap.rs/book/version/master/prologue/release-notes/#deprecated"><span class="text-primary">#</span> Deprecated</a></li>
+
+                
+                
+                <li><a class="text-dark" href="https://leap.rs/book/version/master/prologue/release-notes/#removed"><span class="text-primary">#</span> Removed</a></li>
+
+                
+                
+            </ul>
+            <p><h2 id="what-s-new">What's New</h2>
+<h3 id="command">Command</h3>
+<p>The <strong>leap</strong> command lets you quickly create new projects. It also watches for changes in your project and recompiles
+the project when you have made changes.</p>
+<h3 id="web-server">Web Server</h3>
+<p>The <strong>web</strong> module provides a lighting fast web server that is correct and complete.</p>
+<p>The <strong>route</strong> module defines the rules which filter incoming requests from web clients.</p>
+<h3 id="data">Data</h3>
+<p>The <strong>data</strong> module makes it easy to store and retrieve data from a sources such as file systems, key-value stores, 
+databases and messaging brokers.</p>
+<h3 id="templating">Templating</h3>
+<p>The <strong>view</strong> module allows to create html reusable templates.</p>
+<h2 id="changed">Changed</h2>
+<p>Everything! this is the first version. Checkout the <a href="../../getting-started/">getting started</a> page.</p>
+<h2 id="deprecated">Deprecated</h2>
+<p>Nothing has been marked to be removed just yet. Maybe one day!</p>
+<h2 id="removed">Removed</h2>
+<p>Everything is brand new. So there is nothing to be removed.</p>
+</p>
+        </main>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https:&#x2F;&#x2F;leap.rs/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="https:&#x2F;&#x2F;leap.rs/search_index.en.js"></script>
+<script type="text/javascript" src="https:&#x2F;&#x2F;leap.rs/elasticlunr.min.js"></script>
+<script type="text/javascript" src="https:&#x2F;&#x2F;leap.rs/js/search.js"></script>
+<script type="text/javascript" src="https:&#x2F;&#x2F;leap.rs/js/noquery.js"></script>
+<script type="text/javascript" src="https:&#x2F;&#x2F;leap.rs/js/localdate.js"></script>
+</body>
+</html>

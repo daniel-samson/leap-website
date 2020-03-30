@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}{{ section.title }}{% endblock title %}
+{% block content %}
+<div class="container pt-5">
+    <div class="pt-5"></div>
+    {% for post in section.pages %}
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="border">
+                <div class="d-none d-lg-block">
+                    <img width="100%" height="auto" src="{{ config.base_url }}/images/{{ post.extra.image }}">
+                </div>
+                <div class="p-4">
+                    <h2>{{post.title}}</h2>
+                    <small>
+                        <span class="category text-info text-uppercase">{{post.taxonomies.categories[0]}}</span>
+                        <span> / </span>
+                        <span class="subtitle text-primary text-capitalize"><strong data-local-date="{{post.date}}"></strong></span>
+                        <span> / </span>
+                        <span>Written by <span class="text-capitalize">{{post.extra.author}}</span></span>
+                    </small>
+                    <p class="lead">
+                        {{ post.summary | safe }}
+                    </p>
+                    <a class="stretched-lin" href="{{ post.permalink }}" role="button">Continue reading...</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<footer class="footer">
+    <div class="container">Leap &copy;</div>
+</footer>
+
+{% endblock content %}
